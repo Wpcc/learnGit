@@ -1,7 +1,7 @@
-### learn git
-===
+## learn git
+___
 
-#### 第一部分 git新建文件
+### 第一部分 git新建文件
 
 初始化版本控制工具git：$ git init  
 查看文件目录： $ pwd  --非必要
@@ -13,7 +13,7 @@
 pwd：print work directory  
 m: message  
 
-#### 第二部分 git修改文件
+### 第二部分 git修改文件
 
 如果修改文件而并未提交：$ git status  
 --查看当前文件状态  
@@ -22,7 +22,7 @@ m: message
 命令语句缩写解释：
 diff:different
 
-#### 第三部分 git回溯机制
+### 第三部分 git回溯机制
 
 HEAD代表当前版本，上一个版本是HEAD^，以此类推。  
 回溯太远的话可以是HEAD~12  
