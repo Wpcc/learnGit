@@ -33,6 +33,8 @@ diff:different
 
 ## 第三部分 git回溯机制
 
+### 回溯  
+
 在git工具中HEAD代表当前版本，上一个版本是HEAD^，以此类推。  
 回溯太远的话可以简写HEAD~12。
 git中每一次对master的提交都有一个唯一的ID  
@@ -45,3 +47,17 @@ git中每一次对master的提交都有一个唯一的ID  
 #### 有时候回溯会导致当前版本消失  
 可以查看操作历史： $ git reflog
 查看暂存区的命令：$ cat filename
+
+### 删除
+
+#### 删除工作区文件--直接调用命令行语句  
+命令行：$ rm filename  
+#### 查看储存状态--工作区和版本库文件不一致
+命令行：$ git status  
+1. 删除版本库文件
+删除命令行：$ git rm filename
+提交命令行：$ git commit -m 'content'
+2. 恢复版本库文件  
+恢复命令行： $ git checkout -- filename
+
+## 第四部分 git远程仓库
