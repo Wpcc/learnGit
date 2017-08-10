@@ -21,7 +21,8 @@ m: message
 ## 第二部分 git修改文件
 
 git储存：本地git版本控制工具的储存分两个区域，工作区和版本库。  
-版本库又分为：暂存区（stage）以及主存区（master）  
+版本库又分为：暂存区（stage）以及主存区（master）  
+
 ![resp](./img/git-stage.jpg)
 #### 修改文件而并未提交可以查看储存状态
 命令行：$ git status
