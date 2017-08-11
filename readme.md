@@ -91,7 +91,7 @@ git和github之间的传输是通过SSH加密的，首先需要设置的就是SS
 #### 命令行解释  
 -u 推送内容并让本地仓库与远程仓库关联 一般出现在第一次推送当中  
 
-## 本地分支  
+## 第五部分 本地分支  
 
 ### 创建合并分支  
 
@@ -115,3 +115,38 @@ git和github之间的传输是通过SSH加密的，首先需要设置的就是SS
 2. 主要开发保管的分支dev。  
 3. 修复常见漏洞的分支bug。
 .....  
+
+### 多人协作  
+#### 查看远程库信息  
+命令行： $ git remote -v  
+#### 从本地推送分支/推送失败需要抓取远程信息  
+命令行： $ git push origin <branch-name>
+命令行： $ git pull  
+#### 在本地创建和远程分支对应分支  
+命令行： $ git checkout -b <branch-name> origin/<branch-name>  
+#### 建立本地分支和远程分支的关联  
+命令行： $ git branch --set-upstream <branch-name> origin/<branch-name>
+
+## 第六部分 标签管理  
+
+### 创建标签
+
+#### 新建一个标签  
+命令行： $ git tag <name>  
+#### 新建标签并附上标签信息  
+命令行： $ git tag -a <tagname> -m 'blablabla....'
+#### 可以用PGP签名标签  
+命令行： $ git tag -s <tagname> -m 'blablabla...'  
+#### 查看所有标签  
+命令行： $ git tag  
+
+### 操作标签  
+
+#### 推送本地标签  
+命令行： $ git push origin <tagname>  
+#### 推送全部本地标签  
+命令行： $ git push origin --tags  
+#### 删除本地标签  
+命令行： $ git tag -d <tagname>  
+#### 删除远程标签  
+命令行： $ git push origin :refs/tags/<tagname>
