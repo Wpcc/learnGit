@@ -73,7 +73,7 @@ git和github之间的传输是通过SSH加密的，首先需要设置的就是SS
 #### 在本地创建ssh key  
 命令行： $ ssh-keygen -t rsa -C 'youremail@example.com'  
 执行命令行会在本地（用户目录下）创建两个密钥，一个公钥id_rsa.pub，一个私钥id_rsa，在和github远程仓库进行绑定的时候会用到公钥。  
-![ssh](.img/ssh.png)  
+![ssh](./img/ssh.png)  
 #### 创建远程仓库  
 当我们在github上进行公钥连接，也就意味着本地取得远程仓库的使用权，接下来我们需要在github上创建远程仓库。  
 ![create-repo1](.img/create-repo1.png)  
