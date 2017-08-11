@@ -66,6 +66,47 @@ git的定义是分布式版本控制系统，也就是说除了我们本身电�
 一定还存在着一个服务器仓库，控制交互着每一个共同开发者的仓库。  
 以github网站为例。
 
-#### 创建远程仓库  
+### 创建远程仓库  
 
-git和github之间的传输是通过SSH加密的，首先需要设置的就是SSH key。
+git和github之间的传输是通过SSH加密的，首先需要设置的就是SSH key。  
+#### 在本地创建ssh key  
+命令行： $ ssh-keygen -t rsa -C 'youremail@example.com'  
+执行命令行会在本地（用户目录下）创建两个密钥，一个公钥id_rsa.pub，一个私钥id_rsa，在和github远程仓库进行绑定的时候会用到公钥。  
+![ssh](.img/ssh.png)  
+#### 创建远程仓库  
+当我们在github上进行公钥连接，也就意味着本地取得远程仓库的使用权，接下来我们需要在github上创建远程仓库。  
+![create-repo1](.img/create-repo1.png)  
+![create-rep02](./img/create-rep2.png)  
+创建完成后可以获取到远程仓库的地址，并让本地仓库与之关联。  
+命令行： $ git remote add origin git@github.con:Wpcc.learnGit.git  
+远程仓库需要换成与之关联的仓库。
+由于第一次创建的远程仓库内容为空，我们需要进行第一次推送。  
+命令行： $ git push -u origin master  
+
+#### 克隆远程仓库  
+命令行1：$ git clone git@github.com:Wpcc/learnGit.git  
+命令行2：$ git clone https://github.com/Wpcc/learnGit.git 
+
+#### 命令行解释  
+-u 推送内容并让本地仓库与远程仓库关联 一般出现在第一次推送当中  
+
+## 本地分支  
+
+### 创建合并分支  
+
+#### 查看分支  
+命令行： $ git branch  
+#### 创建分支  
+命令行： $ git branch <name>  
+#### 切换分支  
+命令行：$ git checkout <name>  
+#### 创建+切换分支：  
+命令行：$ git checkout -b <name>  
+#### 合并某分支到当前分支：  
+命令行：$ git merge <name>
+#### 删除分支  
+命令行： $ git branch -d <name>
+
+### 分支冲突  
+1. 当本地两个分支有各自的修改，合并的时候会产生冲突，因为系统不知道哪种分支的修改需要保留，哪种分支的修改需要删除，这个时候我们需要手动修改。  
+2. 
