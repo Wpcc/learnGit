@@ -98,15 +98,15 @@ git和github之间的传输是通过SSH加密的，首先需要设置的就是SS
 #### 查看分支  
 命令行： $ git branch  
 #### 创建分支  
-命令行： $ git branch <name>  
+命令行： $ git branch (name)  
 #### 切换分支  
-命令行：$ git checkout <name>  
+命令行：$ git checkout (name)  
 #### 创建+切换分支：  
-命令行：$ git checkout -b <name>  
+命令行：$ git checkout -b (name)  
 #### 合并某分支到当前分支：  
-命令行：$ git merge <name>
+命令行：$ git merge (name)
 #### 删除分支  
-命令行： $ git branch -d <name>
+命令行： $ git branch -d (name)
 
 ### 分支冲突  
 当本地两个分支有各自的修改，合并的时候会产生冲突，因为系统不知道哪种分支的修改需要保留，哪种分支的修改需要删除，这个时候我们需要手动修改。  
@@ -120,33 +120,33 @@ git和github之间的传输是通过SSH加密的，首先需要设置的就是SS
 #### 查看远程库信息  
 命令行： $ git remote -v  
 #### 从本地推送分支/推送失败需要抓取远程信息  
-命令行： $ git push origin <branch-name>
+命令行： $ git push origin (branch-name)
 命令行： $ git pull  
 #### 在本地创建和远程分支对应分支  
-命令行： $ git checkout -b <branch-name> origin/<branch-name>  
+命令行： $ git checkout -b (branch-name) origin/(branch-name)  
 #### 建立本地分支和远程分支的关联  
-命令行： $ git branch --set-upstream <branch-name> origin/<branch-name>
+命令行： $ git branch --set-upstream (branch-name) origin/(branch-name)
 
 ## 第六部分 标签管理  
 
 ### 创建标签
 
 #### 新建一个标签  
-命令行： $ git tag <name>  
+命令行： $ git tag (name)  
 #### 新建标签并附上标签信息  
-命令行： $ git tag -a <tagname> -m 'blablabla....'
+命令行： $ git tag -a (tagname) -m 'blablabla....'
 #### 可以用PGP签名标签  
-命令行： $ git tag -s <tagname> -m 'blablabla...'  
+命令行： $ git tag -s (tagname) -m 'blablabla...'  
 #### 查看所有标签  
 命令行： $ git tag  
 
 ### 操作标签  
 
 #### 推送本地标签  
-命令行： $ git push origin <tagname>  
+命令行： $ git push origin (tagname)  
 #### 推送全部本地标签  
 命令行： $ git push origin --tags  
 #### 删除本地标签  
-命令行： $ git tag -d <tagname>  
+命令行： $ git tag -d (tagname)  
 #### 删除远程标签  
-命令行： $ git push origin :refs/tags/<tagname>
+命令行： $ git push origin :refs/tags/(tagname)
