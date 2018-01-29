@@ -76,7 +76,7 @@ git和github之间的传输是通过SSH加密的，首先需要设置的就是SS
 ![ssh](./img/ssh.png)  
 #### 创建远程仓库  
 当我们在github上进行公钥连接，也就意味着本地取得远程仓库的使用权，接下来我们需要在github上创建远程仓库。  
-![create-repo1](.img/create-repo1.png)  
+![create-rep01](./img/create-repo1.png) 
 ![create-rep02](./img/create-rep2.png)  
 创建完成后可以获取到远程仓库的地址，并让本地仓库与之关联。  
 命令行： $ git remote add origin git@github.con:Wpcc.learnGit.git  
