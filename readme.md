@@ -16,10 +16,26 @@ ___
 **git的基本命令行语句：**
 
 1. **提交。** 从工作区提交到暂存区（git add filename），从暂存区提交到主存区（git commit -m"提交内容描述"；m是comment的缩写，对该次提交节点的一个描述，方便下次查找）。从主存区提交到origin区（git push）。
+
 2. **状态。** 查询工作区与版本区之间的差异（git status），无法查询工作区与版本之间的差异，我们只能通过（git pull）命令行将远程主机内容拉取到本地，本地内容将会显示远程主机与本地的差异内容，我们只需编辑该内容并按步骤提交即可。
+
 3. **协议。** git有两种推送协议分别是http以及ssh，通过命令行（git remote -v；v是version的缩写）能查看当前的传输协议。http协议推送在每次推送时都会填写账户名和密码，所以日常中我们常常用ssh推送，将http协议转化成ssh协议命令行如下（1.git remote rm origin；2.git remote add origin git@github.com:XXXX/XXX.git;3.git push -u origin master；u参数你可以理解为‘undo’类似于一个绑定，之后就可以simple push了不用加远程主机和本地主机名。）
+
 4. **绑定。** git有两种协议绑定http和ssh，绑定命令行（git remote add origin http address/ssh 密钥）
+
 5. **分支。** git可以创建分支，通过命令行（1.git branch name；创建分支。2.git checkout name；切换分支。3.我们也可以通过以下命令行进行两步操作 git checkout -b name），当然创建分支之后便会有合并分支，git合并分支是将主分支指向分支节点，命令行（git merge <branchname>），在合并之后便是删除操作了（git branch -d <name>）
+
+**SSH传输协议：**  
+	ssh英文为secure shell意为安全的壳。
+	ssh有两种传输安全验证。
+	第一种（基于口令的安全验证），当你知道账号密码就可以登录到远程主机进行文件传输，由于确认方只存在远程主机所以会存在别的服务器冒充真正服务器的安全隐患。
+	第二种（基于密钥的安全验证），本地主机会生成一个密钥放在远程主机上，以便在传输过程中可以确认双方身份信息。
+	以下操作基于windows下的git bash命令窗口：
+	ssh-keygen -t ras -b 4096 -C "your email"+三次回车确认，会在本地主机生成公钥。  
+	通过命令语句：cat ~/.ssh/id_ras.pub可以查看到。密钥的绝对路径位于：c:/administrator/.ssh文件下，你可以查看该文件确认是否在本地主机生成公钥。  
+	将命令行显示公钥复制添加到远程主机可以是github也可以是其它地址。  
+	输入命令 ssh -T git@github.com查看密钥是否生效。  
+	
 
 ## 第一部分 git新建文件
 
